@@ -11,10 +11,13 @@ import rx.Observable;
  * Created by yutao on 11/14/15.
  */
 public interface PullService {
-    String SERVICE_ENDPOINT = "https://api.github.com";
+    String SERVICE_ENDPOINT = "http://nodered-hengyu.mybluemix.net";
 
-    @GET("/users")
+    @GET("/getConsoles")
     Call<PullMsg> getPullMsg();
+
+    @GET("/getConsoles")
+    Call<String> getPullMsgString();
 
     @GET("/users/{login}")
     Call<Github> getUser(@Path("login") String login);

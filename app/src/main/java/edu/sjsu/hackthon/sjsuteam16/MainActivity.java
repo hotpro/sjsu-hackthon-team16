@@ -220,11 +220,11 @@ public class MainActivity extends AppCompatActivity
 //                    public void onResponse(Response<PullMsg> response, Retrofit retrofit) {
 //                        PullMsg pullMsg = response.body();
 //                        if (pullMsg != null) {
-//                            Log.d("MainActivity", "get notification");
+//                            Log.d("MainActivity", "get notification: " + pullMsg);
 //                            NotificationUtils.showNotification(MainActivity.this, 324752);
 //                        }
 //
-//                        handler.sendEmptyMessageDelayed(1, 1000);
+//                        handler.sendEmptyMessageDelayed(1, 3000);
 //                    }
 //
 //                    @Override
@@ -233,17 +233,17 @@ public class MainActivity extends AppCompatActivity
 //                    }
 //                });
 
-        service.getUser("hotpro")
-                .enqueue(new Callback<Github>() {
+        service.getPullMsgString()
+                .enqueue(new Callback<String>() {
                     @Override
-                    public void onResponse(Response<Github> response, Retrofit retrofit) {
-                        Github pullMsg = response.body();
+                    public void onResponse(Response<String> response, Retrofit retrofit) {
+                        String pullMsg = response.body();
                         if (pullMsg != null) {
-                            Log.d("MainActivity", "get notification");
+                            Log.d("MainActivity", "get notification: " + pullMsg);
                             NotificationUtils.showNotification(MainActivity.this, 324752);
                         }
 
-                        handler.sendEmptyMessageDelayed(1, 1000);
+                        handler.sendEmptyMessageDelayed(1, 3000);
                     }
 
                     @Override
@@ -251,6 +251,25 @@ public class MainActivity extends AppCompatActivity
 
                     }
                 });
+
+//        service.getUser("hotpro")
+//                .enqueue(new Callback<Github>() {
+//                    @Override
+//                    public void onResponse(Response<Github> response, Retrofit retrofit) {
+//                        Github pullMsg = response.body();
+//                        if (pullMsg != null) {
+//                            Log.d("MainActivity", "get notification");
+//                            NotificationUtils.showNotification(MainActivity.this, 324752);
+//                        }
+//
+//                        handler.sendEmptyMessageDelayed(1, 3000);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Throwable t) {
+//
+//                    }
+//                });
     }
 
     private Handler handler = new Handler() {
