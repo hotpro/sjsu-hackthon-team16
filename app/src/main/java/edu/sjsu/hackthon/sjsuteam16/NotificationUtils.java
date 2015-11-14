@@ -5,7 +5,13 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 
 /**
@@ -15,9 +21,10 @@ public class NotificationUtils {
     public static void showNotification(Context context, int id) {
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.ic_drawer)
-                .setContentTitle("GAMESTOP Notification")
-                .setContentText("Game Promotion");
+//                        .setLargeIcon(getBitmapFromAsset(context, "ic_push_msg.png"))
+                        .setSmallIcon(R.drawable.ic_push_msg)
+                        .setContentTitle("GAMESTOP Notification")
+                        .setContentText("Game Promotion");
 
         // Creates an explicit intent for an Activity in app
         Intent resultIntent = new Intent(context, GameInfoActivity.class);
@@ -38,7 +45,22 @@ public class NotificationUtils {
                 );
         mBuilder.setContentIntent(resultPendingIntent);
         NotificationManager mNotificationManager =
-                (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(id > 0 ? id : 1000, mBuilder.build());
+    }
+
+    public static Bitmap getBitmapFromAsset(Context context, String filePath) {
+        AssetManager assetManager = context.getAssets();
+
+        InputStream istr;
+        Bitmap bitmap = null;
+        try {
+            istr = assetManager.open(filePath);
+            bitmap = BitmapFactory.decodeStream(istr);
+        } catch (IOException e) {
+            // handle exception
+        }
+
+        return bitmap;
     }
 }

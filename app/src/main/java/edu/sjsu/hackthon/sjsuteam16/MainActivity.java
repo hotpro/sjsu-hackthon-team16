@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity
                 R.id.navigation_drawer,
                 mDrawerLayout);
 
-        startPull(this);
 
+        handler.sendEmptyMessageDelayed(1, 8000);
     }
 
     public void initImageLoader(Context context) {
