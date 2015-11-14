@@ -1,0 +1,14 @@
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/captures
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+*.iml
+.idea/
