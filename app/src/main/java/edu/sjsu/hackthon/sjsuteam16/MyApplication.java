@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.ibm.mobile.services.core.IBMBluemix;
-import com.ibm.mobile.services.data.IBMData;
+//import com.ibm.mobile.services.data.IBMData;
 import com.ibm.mobile.services.push.IBMPush;
 import com.ibm.mobile.services.push.IBMPushNotificationListener;
 import com.ibm.mobile.services.push.IBMSimplePushNotification;
@@ -39,7 +39,7 @@ public class MyApplication extends Application {
     public static final int EDIT_ACTIVITY_RC = 1;
     private static final String CLASS_NAME = MyApplication.class
             .getSimpleName();
-    List<Item> itemList;
+//    List<Item> itemList;
     private IBMPushNotificationListener notificationListener = null;
 
     public MyApplication() {
@@ -123,7 +123,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        itemList = new ArrayList<Item>();
+//        itemList = new ArrayList<Item>();
         // Read from properties file.
         Properties props = new java.util.Properties();
         Context context = getApplicationContext();
@@ -141,9 +141,9 @@ public class MyApplication extends Application {
         // Initialize the IBM core backend-as-a-service.
         IBMBluemix.initialize(this, props.getProperty(APP_ID), props.getProperty(APP_SECRET), props.getProperty(APP_ROUTE));
         // Initialize the IBM Data Service.
-        IBMData.initializeService();
+//        IBMData.initializeService();
         // Register Item Specialization here.
-        Item.registerSpecialization(Item.class);
+//        Item.registerSpecialization(Item.class);
         // Initialize IBM Push service.
         IBMPush.initializeService();
         // Retrieve instance of the IBM Push service.
@@ -167,14 +167,5 @@ public class MyApplication extends Application {
             }
 
         });
-    }
-
-    /**
-     * returns the itemList, an array of Item objects.
-     *
-     * @return itemList
-     */
-    public List<Item> getItemList() {
-        return itemList;
     }
 }
