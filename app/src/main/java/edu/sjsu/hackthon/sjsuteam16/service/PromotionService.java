@@ -20,4 +20,11 @@ public interface PromotionService {
             @Query("client_id") String client_id,
             @Query("client_secret") String client_secret
     );
+
+    @GET("/gamestop/prod/gamestop/promotions/{id}")
+    Call<Promotion> getPromotionById(
+            @Path("id") String id,
+            @Query("client_id") String client_id,
+            @Query("client_secret") String client_secret
+    );
 }

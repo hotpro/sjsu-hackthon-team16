@@ -44,6 +44,8 @@
             <!-- Push Settings End -->
         </activity>
 
+        <activity android:name=".GameInfoActivity"/>
+
         <!--<service android:name="com.ibm.mobile.services.push.IBMPushIntentService" />-->
 
         <!--<receiver-->
