@@ -2,6 +2,7 @@ package edu.sjsu.hackthon.sjsuteam16.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,8 +71,12 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
     public void onBindViewHolder(final ViewHolder holder, int i) {
         Promotion promotion = mItems.get(i);
         holder.login.setText(promotion.getTITLE());
-        holder.repos.setText("start: " + promotion.getEFFECTIVE_START_TS());
-        holder.blog.setText("end: " + promotion.getEFFECTIVE_END_TS());
+        String[] spStr = promotion.getEFFECTIVE_START_TS().split(" ");
+        holder.repos.setText("start: " + spStr[0]);
+        spStr = promotion.getEFFECTIVE_END_TS().split(" ");
+        holder.blog.setText("end: " + spStr[0]);
+        holder.origin.setText("Original Price: $" + promotion.getORIGINAL_PRICE());
+        holder.promo.setText("OnSale Price: $" + promotion.getBENEFIT_VALUE());
         ImageLoader.getInstance()
                 .displayImage(mItems.get(i).getLARGE_IMAGE_URI(), holder.pic, options, new SimpleImageLoadingListener() {
                     @Override
@@ -101,6 +106,8 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
         public TextView login;
         public TextView repos;
         public TextView blog;
+        public TextView origin;
+        public TextView promo;
         public ImageView pic;
 
         public ViewHolder(View itemView) {
@@ -108,6 +115,9 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
             login = (TextView) itemView.findViewById(R.id.login);
             repos = (TextView) itemView.findViewById(R.id.repos);
             blog = (TextView) itemView.findViewById(R.id.blog);
+            origin = (TextView) itemView.findViewById(R.id.origin);
+            promo = (TextView) itemView.findViewById(R.id.promo);
+            //promo.setTextColor(Color.parseColor("#FFFFFF"));
             pic = (ImageView) itemView.findViewById(R.id.pic);
         }
     }
