@@ -1,6 +1,7 @@
 package edu.sjsu.hackthon.sjsuteam16.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +20,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.sjsu.hackthon.sjsuteam16.GameInfoActivity;
 import edu.sjsu.hackthon.sjsuteam16.R;
 import edu.sjsu.hackthon.sjsuteam16.model.Promotion;
 
@@ -27,9 +29,11 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
     private LayoutInflater inflater;
 
     private DisplayImageOptions options;
+    private Context context;
 
     public PromotionAdapter(Context context) {
         super();
+        this.context = context;
         mItems = new ArrayList<>();
         inflater = LayoutInflater.from(context);
 
@@ -64,6 +68,7 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.promotion_item, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(v);
+        v.setOnClickListener(viewHolder);
         return viewHolder;
     }
 
@@ -102,7 +107,7 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
         return mItems.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView login;
         public TextView repos;
         public TextView blog;
@@ -119,6 +124,12 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.View
             promo = (TextView) itemView.findViewById(R.id.promo);
             //promo.setTextColor(Color.parseColor("#FFFFFF"));
             pic = (ImageView) itemView.findViewById(R.id.pic);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(context, GameInfoActivity.class);
+            context.startActivity(intent);
         }
     }
 }

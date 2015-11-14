@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity
                 R.id.navigation_drawer,
                 mDrawerLayout);
 
+        startPull(this);
+
     }
 
     public void initImageLoader(Context context) {
@@ -212,7 +214,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        startPull(this);
 
     }
 
