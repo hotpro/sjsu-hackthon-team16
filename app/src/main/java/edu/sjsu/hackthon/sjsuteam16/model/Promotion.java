@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class JsonData {
+public class Promotion {
 
     private String SOURCE;
     private Integer ID;
-    private String EFFECTIVESTARTTS;
-    private String EFFECTIVEENDTS;
-    private Integer BENEFITTYPE;
+    private String EFFECTIVE_START_TS;
+    private String EFFECTIVE_END_TS;
+    private Integer BENEFIT_TYPE;
     private Integer BENEFITVALUE;
     private String BENEFITTEXT;
     private Integer ORIGINALPRICE;
@@ -30,9 +30,9 @@ public class JsonData {
     private Integer APPLICABLEBEACONS;
     private String CAPTION;
     private String DESCRIPTION;
-    private String SMALLIMAGEURI;
-    private String LARGEIMAGEURI;
-    private String HEROIMAGEURI;
+    private String SMALL_IMAGE_URI;
+    private String LARGE_IMAGE_URI;
+    private String HERO_IMAGE_URI;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -74,55 +74,55 @@ public class JsonData {
     /**
      *
      * @return
-     * The EFFECTIVESTARTTS
-     */
-    public String getEFFECTIVESTARTTS() {
-        return EFFECTIVESTARTTS;
-    }
-
-    /**
-     *
-     * @param EFFECTIVESTARTTS
      * The EFFECTIVE_START_TS
      */
-    public void setEFFECTIVESTARTTS(String EFFECTIVESTARTTS) {
-        this.EFFECTIVESTARTTS = EFFECTIVESTARTTS;
+    public String getEFFECTIVE_START_TS() {
+        return EFFECTIVE_START_TS;
+    }
+
+    /**
+     *
+     * @param EFFECTIVE_START_TS
+     * The EFFECTIVE_START_TS
+     */
+    public void setEFFECTIVE_START_TS(String EFFECTIVE_START_TS) {
+        this.EFFECTIVE_START_TS = EFFECTIVE_START_TS;
     }
 
     /**
      *
      * @return
-     * The EFFECTIVEENDTS
-     */
-    public String getEFFECTIVEENDTS() {
-        return EFFECTIVEENDTS;
-    }
-
-    /**
-     *
-     * @param EFFECTIVEENDTS
      * The EFFECTIVE_END_TS
      */
-    public void setEFFECTIVEENDTS(String EFFECTIVEENDTS) {
-        this.EFFECTIVEENDTS = EFFECTIVEENDTS;
+    public String getEFFECTIVE_END_TS() {
+        return EFFECTIVE_END_TS;
+    }
+
+    /**
+     *
+     * @param EFFECTIVE_END_TS
+     * The EFFECTIVE_END_TS
+     */
+    public void setEFFECTIVE_END_TS(String EFFECTIVE_END_TS) {
+        this.EFFECTIVE_END_TS = EFFECTIVE_END_TS;
     }
 
     /**
      *
      * @return
-     * The BENEFITTYPE
+     * The BENEFIT_TYPE
      */
-    public Integer getBENEFITTYPE() {
-        return BENEFITTYPE;
+    public Integer getBENEFIT_TYPE() {
+        return BENEFIT_TYPE;
     }
 
     /**
      *
-     * @param BENEFITTYPE
+     * @param BENEFIT_TYPE
      * The BENEFIT_TYPE
      */
-    public void setBENEFITTYPE(Integer BENEFITTYPE) {
-        this.BENEFITTYPE = BENEFITTYPE;
+    public void setBENEFIT_TYPE(Integer BENEFIT_TYPE) {
+        this.BENEFIT_TYPE = BENEFIT_TYPE;
     }
 
     /**
@@ -398,55 +398,55 @@ public class JsonData {
     /**
      *
      * @return
-     * The SMALLIMAGEURI
-     */
-    public String getSMALLIMAGEURI() {
-        return SMALLIMAGEURI;
-    }
-
-    /**
-     *
-     * @param SMALLIMAGEURI
      * The SMALL_IMAGE_URI
      */
-    public void setSMALLIMAGEURI(String SMALLIMAGEURI) {
-        this.SMALLIMAGEURI = SMALLIMAGEURI;
+    public String getSMALL_IMAGE_URI() {
+        return SMALL_IMAGE_URI;
+    }
+
+    /**
+     *
+     * @param SMALL_IMAGE_URI
+     * The SMALL_IMAGE_URI
+     */
+    public void setSMALL_IMAGE_URI(String SMALL_IMAGE_URI) {
+        this.SMALL_IMAGE_URI = SMALL_IMAGE_URI;
     }
 
     /**
      *
      * @return
-     * The LARGEIMAGEURI
-     */
-    public String getLARGEIMAGEURI() {
-        return LARGEIMAGEURI;
-    }
-
-    /**
-     *
-     * @param LARGEIMAGEURI
      * The LARGE_IMAGE_URI
      */
-    public void setLARGEIMAGEURI(String LARGEIMAGEURI) {
-        this.LARGEIMAGEURI = LARGEIMAGEURI;
+    public String getLARGE_IMAGE_URI() {
+        return LARGE_IMAGE_URI;
+    }
+
+    /**
+     *
+     * @param LARGE_IMAGE_URI
+     * The LARGE_IMAGE_URI
+     */
+    public void setLARGE_IMAGE_URI(String LARGE_IMAGE_URI) {
+        this.LARGE_IMAGE_URI = LARGE_IMAGE_URI;
     }
 
     /**
      *
      * @return
-     * The HEROIMAGEURI
+     * The HERO_IMAGE_URI
      */
-    public String getHEROIMAGEURI() {
-        return HEROIMAGEURI;
+    public String getHERO_IMAGE_URI() {
+        return HERO_IMAGE_URI;
     }
 
     /**
      *
-     * @param HEROIMAGEURI
+     * @param HERO_IMAGE_URI
      * The HERO_IMAGE_URI
      */
-    public void setHEROIMAGEURI(String HEROIMAGEURI) {
-        this.HEROIMAGEURI = HEROIMAGEURI;
+    public void setHERO_IMAGE_URI(String HERO_IMAGE_URI) {
+        this.HERO_IMAGE_URI = HERO_IMAGE_URI;
     }
 
     public Map<String, Object> getAdditionalProperties() {
