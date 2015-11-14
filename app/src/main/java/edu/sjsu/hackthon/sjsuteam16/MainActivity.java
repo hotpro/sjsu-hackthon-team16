@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity
             fragment = GithubUserFragment.newInstance(position + 1);
         } else {
             fragment = PlaceholderFragment.newInstance(position + 1);
+            NotificationUtils notificationUtils = new NotificationUtils();
+            notificationUtils.showNotification(this, 3);
         }
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();

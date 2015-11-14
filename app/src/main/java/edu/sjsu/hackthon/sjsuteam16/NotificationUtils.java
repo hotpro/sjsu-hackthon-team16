@@ -12,7 +12,7 @@ import android.support.v4.app.NotificationCompat;
  * Created by yunlongxu on 11/13/15.
  */
 public class NotificationUtils {
-    public static void showNotification(Context context) {
+    public static void showNotification(Context context, int id) {
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
                 .setSmallIcon(R.drawable.ic_drawer)
@@ -37,8 +37,8 @@ public class NotificationUtils {
                         PendingIntent.FLAG_UPDATE_CURRENT
                 );
         mBuilder.setContentIntent(resultPendingIntent);
-//        NotificationManager mNotificationManager =
-//                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-//        mNotificationManager.notify(mId, mBuilder.build());
+        NotificationManager mNotificationManager =
+                (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(id > 0 ? id : 1000, mBuilder.build());
     }
 }
