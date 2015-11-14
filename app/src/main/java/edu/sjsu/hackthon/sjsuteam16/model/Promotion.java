@@ -15,19 +15,19 @@ public class Promotion {
     private String EFFECTIVE_START_TS;
     private String EFFECTIVE_END_TS;
     private Integer BENEFIT_TYPE;
-    private Integer BENEFITVALUE;
-    private String BENEFITTEXT;
-    private Integer ORIGINALPRICE;
-    private Object COUPONCODE;
-    private Object MINMEMBERSHIPLVL;
-    private String INCLUDEDSTORES;
+    private Integer BENEFIT_VALUE;
+    private String BENEFIT_TEXT;
+    private Integer ORIGINAL_PRICE;
+    private Object COUPON_CODE;
+    private Object MIN_MEMBERSHIP_LVL;
+    private String INCLUDED_STORES;
     private Integer SKU;
     private String TITLE;
     private String DISCLAIMERS;
-    private String PUBLISHSTARTTS;
-    private String PUBLISHENDTS;
-    private String CATEGORIESTODISPLAY;
-    private Integer APPLICABLEBEACONS;
+    private String PUBLISH_START_TS;
+    private String PUBLISH_END_TS;
+    private String CATEGORIES_TO_DISPLAY;
+    private Integer APPLICABLE_BEACONS;
     private String CAPTION;
     private String DESCRIPTION;
     private String SMALL_IMAGE_URI;
@@ -128,109 +128,109 @@ public class Promotion {
     /**
      *
      * @return
-     * The BENEFITVALUE
-     */
-    public Integer getBENEFITVALUE() {
-        return BENEFITVALUE;
-    }
-
-    /**
-     *
-     * @param BENEFITVALUE
      * The BENEFIT_VALUE
      */
-    public void setBENEFITVALUE(Integer BENEFITVALUE) {
-        this.BENEFITVALUE = BENEFITVALUE;
+    public Integer getBENEFIT_VALUE() {
+        return BENEFIT_VALUE;
+    }
+
+    /**
+     *
+     * @param BENEFIT_VALUE
+     * The BENEFIT_VALUE
+     */
+    public void setBENEFIT_VALUE(Integer BENEFIT_VALUE) {
+        this.BENEFIT_VALUE = BENEFIT_VALUE;
     }
 
     /**
      *
      * @return
-     * The BENEFITTEXT
-     */
-    public String getBENEFITTEXT() {
-        return BENEFITTEXT;
-    }
-
-    /**
-     *
-     * @param BENEFITTEXT
      * The BENEFIT_TEXT
      */
-    public void setBENEFITTEXT(String BENEFITTEXT) {
-        this.BENEFITTEXT = BENEFITTEXT;
+    public String getBENEFIT_TEXT() {
+        return BENEFIT_TEXT;
+    }
+
+    /**
+     *
+     * @param BENEFIT_TEXT
+     * The BENEFIT_TEXT
+     */
+    public void setBENEFIT_TEXT(String BENEFIT_TEXT) {
+        this.BENEFIT_TEXT = BENEFIT_TEXT;
     }
 
     /**
      *
      * @return
-     * The ORIGINALPRICE
-     */
-    public Integer getORIGINALPRICE() {
-        return ORIGINALPRICE;
-    }
-
-    /**
-     *
-     * @param ORIGINALPRICE
      * The ORIGINAL_PRICE
      */
-    public void setORIGINALPRICE(Integer ORIGINALPRICE) {
-        this.ORIGINALPRICE = ORIGINALPRICE;
+    public Integer getORIGINAL_PRICE() {
+        return ORIGINAL_PRICE;
+    }
+
+    /**
+     *
+     * @param ORIGINAL_PRICE
+     * The ORIGINAL_PRICE
+     */
+    public void setORIGINAL_PRICE(Integer ORIGINAL_PRICE) {
+        this.ORIGINAL_PRICE = ORIGINAL_PRICE;
     }
 
     /**
      *
      * @return
-     * The COUPONCODE
-     */
-    public Object getCOUPONCODE() {
-        return COUPONCODE;
-    }
-
-    /**
-     *
-     * @param COUPONCODE
      * The COUPON_CODE
      */
-    public void setCOUPONCODE(Object COUPONCODE) {
-        this.COUPONCODE = COUPONCODE;
+    public Object getCOUPON_CODE() {
+        return COUPON_CODE;
+    }
+
+    /**
+     *
+     * @param COUPON_CODE
+     * The COUPON_CODE
+     */
+    public void setCOUPON_CODE(Object COUPON_CODE) {
+        this.COUPON_CODE = COUPON_CODE;
     }
 
     /**
      *
      * @return
-     * The MINMEMBERSHIPLVL
-     */
-    public Object getMINMEMBERSHIPLVL() {
-        return MINMEMBERSHIPLVL;
-    }
-
-    /**
-     *
-     * @param MINMEMBERSHIPLVL
      * The MIN_MEMBERSHIP_LVL
      */
-    public void setMINMEMBERSHIPLVL(Object MINMEMBERSHIPLVL) {
-        this.MINMEMBERSHIPLVL = MINMEMBERSHIPLVL;
+    public Object getMIN_MEMBERSHIP_LVL() {
+        return MIN_MEMBERSHIP_LVL;
+    }
+
+    /**
+     *
+     * @param MIN_MEMBERSHIP_LVL
+     * The MIN_MEMBERSHIP_LVL
+     */
+    public void setMIN_MEMBERSHIP_LVL(Object MIN_MEMBERSHIP_LVL) {
+        this.MIN_MEMBERSHIP_LVL = MIN_MEMBERSHIP_LVL;
     }
 
     /**
      *
      * @return
-     * The INCLUDEDSTORES
+     * The INCLUDED_STORES
      */
-    public String getINCLUDEDSTORES() {
-        return INCLUDEDSTORES;
+    public String getINCLUDED_STORES() {
+        return INCLUDED_STORES;
     }
 
     /**
      *
-     * @param INCLUDEDSTORES
+     * @param INCLUDED_STORES
      * The INCLUDED_STORES
      */
-    public void setINCLUDEDSTORES(String INCLUDEDSTORES) {
-        this.INCLUDEDSTORES = INCLUDEDSTORES;
+    public void setINCLUDED_STORES(String INCLUDED_STORES) {
+        this.INCLUDED_STORES = INCLUDED_STORES;
     }
 
     /**
@@ -290,73 +290,73 @@ public class Promotion {
     /**
      *
      * @return
-     * The PUBLISHSTARTTS
-     */
-    public String getPUBLISHSTARTTS() {
-        return PUBLISHSTARTTS;
-    }
-
-    /**
-     *
-     * @param PUBLISHSTARTTS
      * The PUBLISH_START_TS
      */
-    public void setPUBLISHSTARTTS(String PUBLISHSTARTTS) {
-        this.PUBLISHSTARTTS = PUBLISHSTARTTS;
+    public String getPUBLISH_START_TS() {
+        return PUBLISH_START_TS;
+    }
+
+    /**
+     *
+     * @param PUBLISH_START_TS
+     * The PUBLISH_START_TS
+     */
+    public void setPUBLISH_START_TS(String PUBLISH_START_TS) {
+        this.PUBLISH_START_TS = PUBLISH_START_TS;
     }
 
     /**
      *
      * @return
-     * The PUBLISHENDTS
-     */
-    public String getPUBLISHENDTS() {
-        return PUBLISHENDTS;
-    }
-
-    /**
-     *
-     * @param PUBLISHENDTS
      * The PUBLISH_END_TS
      */
-    public void setPUBLISHENDTS(String PUBLISHENDTS) {
-        this.PUBLISHENDTS = PUBLISHENDTS;
+    public String getPUBLISH_END_TS() {
+        return PUBLISH_END_TS;
+    }
+
+    /**
+     *
+     * @param PUBLISH_END_TS
+     * The PUBLISH_END_TS
+     */
+    public void setPUBLISH_END_TS(String PUBLISH_END_TS) {
+        this.PUBLISH_END_TS = PUBLISH_END_TS;
     }
 
     /**
      *
      * @return
-     * The CATEGORIESTODISPLAY
-     */
-    public String getCATEGORIESTODISPLAY() {
-        return CATEGORIESTODISPLAY;
-    }
-
-    /**
-     *
-     * @param CATEGORIESTODISPLAY
      * The CATEGORIES_TO_DISPLAY
      */
-    public void setCATEGORIESTODISPLAY(String CATEGORIESTODISPLAY) {
-        this.CATEGORIESTODISPLAY = CATEGORIESTODISPLAY;
+    public String getCATEGORIES_TO_DISPLAY() {
+        return CATEGORIES_TO_DISPLAY;
+    }
+
+    /**
+     *
+     * @param CATEGORIES_TO_DISPLAY
+     * The CATEGORIES_TO_DISPLAY
+     */
+    public void setCATEGORIES_TO_DISPLAY(String CATEGORIES_TO_DISPLAY) {
+        this.CATEGORIES_TO_DISPLAY = CATEGORIES_TO_DISPLAY;
     }
 
     /**
      *
      * @return
-     * The APPLICABLEBEACONS
+     * The APPLICABLE_BEACONS
      */
-    public Integer getAPPLICABLEBEACONS() {
-        return APPLICABLEBEACONS;
+    public Integer getAPPLICABLE_BEACONS() {
+        return APPLICABLE_BEACONS;
     }
 
     /**
      *
-     * @param APPLICABLEBEACONS
+     * @param APPLICABLE_BEACONS
      * The APPLICABLE_BEACONS
      */
-    public void setAPPLICABLEBEACONS(Integer APPLICABLEBEACONS) {
-        this.APPLICABLEBEACONS = APPLICABLEBEACONS;
+    public void setAPPLICABLE_BEACONS(Integer APPLICABLE_BEACONS) {
+        this.APPLICABLE_BEACONS = APPLICABLE_BEACONS;
     }
 
     /**
