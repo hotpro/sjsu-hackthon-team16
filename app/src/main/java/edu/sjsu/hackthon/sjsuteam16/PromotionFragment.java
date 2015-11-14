@@ -84,7 +84,9 @@ public class PromotionFragment extends Fragment {
                 .enqueue(new Callback<List<Promotion>>() {
                     @Override
                     public void onResponse(Response<List<Promotion>> response, Retrofit retrofit) {
-                        mCardAdapter.addAllData(response.body());
+                        if (response.body() != null) {
+                            mCardAdapter.addAllData(response.body());
+                        }
                     }
 
                     @Override

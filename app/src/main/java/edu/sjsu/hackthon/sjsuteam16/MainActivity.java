@@ -1,6 +1,8 @@
 package edu.sjsu.hackthon.sjsuteam16;
 
 import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -27,10 +29,16 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+
 import edu.sjsu.hackthon.sjsuteam16.adapter.CardAdapter;
 import edu.sjsu.hackthon.sjsuteam16.model.Github;
+import edu.sjsu.hackthon.sjsuteam16.model.PullMsg;
 import edu.sjsu.hackthon.sjsuteam16.service.GithubService;
+import edu.sjsu.hackthon.sjsuteam16.service.PullService;
 import edu.sjsu.hackthon.sjsuteam16.service.ServiceFactory;
+import retrofit.Callback;
+import retrofit.Response;
+import retrofit.Retrofit;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -197,4 +205,61 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        startPull(this);
+
+    }
+
+    public void startPull(final MainActivity mainActivity) {
+        PullService service = ServiceFactory.createRetrofitService(PullService.class, PullService.SERVICE_ENDPOINT);
+//        service.getPullMsg()
+//                .enqueue(new Callback<PullMsg>() {
+//                    @Override
+//                    public void onResponse(Response<PullMsg> response, Retrofit retrofit) {
+//                        PullMsg pullMsg = response.body();
+//                        if (pullMsg != null) {
+//                            Log.d("MainActivity", "get notification");
+//                            NotificationUtils.showNotification(MainActivity.this, 324752);
+//                        }
+//
+//                        handler.sendEmptyMessageDelayed(1, 1000);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Throwable t) {
+//
+//                    }
+//                });
+
+        service.getUser("hotpro")
+                .enqueue(new Callback<Github>() {
+                    @Override
+                    public void onResponse(Response<Github> response, Retrofit retrofit) {
+                        Github pullMsg = response.body();
+                        if (pullMsg != null) {
+                            Log.d("MainActivity", "get notification");
+                            NotificationUtils.showNotification(MainActivity.this, 324752);
+                        }
+
+                        handler.sendEmptyMessageDelayed(1, 1000);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+
+                    }
+                });
+    }
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 1) {
+                startPull(MainActivity.this);
+            }
+        }
+    };
 }
