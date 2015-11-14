@@ -30,4 +30,13 @@ dependencies {
     compile 'io.reactivex:rxjava:1.0.+'
     compile 'io.reactivex:rxandroid:0.23.+'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    // Play services jar
+    compile 'com.google.android.gms:play-services:8.3.0'
+
+    // IBM cloud jars
+    compile 'com.ibm.mobile.services:ibmdata:1.+'
+    compile 'com.ibm.mobile.services:ibmbluemix:1.+'
+    compile 'com.ibm.mobile.services:ibmfilesync:1.+'
+    compile 'com.ibm.mobile.services:ibmpush:1.+'
+    compile 'com.ibm.mobile.services:ibmcloudcode:1.+'
 }
