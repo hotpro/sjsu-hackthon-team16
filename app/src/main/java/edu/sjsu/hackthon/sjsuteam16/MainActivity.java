@@ -51,26 +51,30 @@ public class MainActivity extends AppCompatActivity
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
+
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    private DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initImageLoader(getApplicationContext());
+//        initImageLoader(getApplicationContext());
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+                mDrawerLayout);
+
     }
 
     public void initImageLoader(Context context) {
@@ -213,6 +217,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void startPull(final MainActivity mainActivity) {
+
+        Log.d("MainActivity", "get startPull: ");
+
         PullService service = ServiceFactory.createRetrofitService(PullService.class, PullService.SERVICE_ENDPOINT);
 //        service.getPullMsg()
 //                .enqueue(new Callback<PullMsg>() {
@@ -233,17 +240,19 @@ public class MainActivity extends AppCompatActivity
 //                    }
 //                });
 
+
         service.getPullMsgString()
                 .enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Response<String> response, Retrofit retrofit) {
                         String pullMsg = response.body();
-                        if (pullMsg != null) {
+                        if (pullMsg != null && !isShowingNotification) {
                             Log.d("MainActivity", "get notification: " + pullMsg);
                             NotificationUtils.showNotification(MainActivity.this, 324752);
+                            isShowingNotification = true;
                         }
 
-                        handler.sendEmptyMessageDelayed(1, 3000);
+                        handler.sendEmptyMessageDelayed(1, 8000);
                     }
 
                     @Override
@@ -272,6 +281,7 @@ public class MainActivity extends AppCompatActivity
 //                });
     }
 
+    private static boolean isShowingNotification = false;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

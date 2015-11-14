@@ -20,7 +20,7 @@ public class NotificationUtils {
                 .setContentText("Game Promotion");
 
         // Creates an explicit intent for an Activity in app
-        Intent resultIntent = new Intent(context, MainActivity.class);
+        Intent resultIntent = new Intent(context, GameInfoActivity.class);
 
         // The stack builder object will contain an aritificial back stack for the
         // started Activity
